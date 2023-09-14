@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Trương Hoàng Nam",
+    "address": "123 Ngô Quyền, phường 10, Quận 10, TP HCM",
+    "phone": "0909123456",
+    "birthday": "09-12-2006",
+    "gender": "nam",
+    "id": 1
+  },
+  {
+    "name": "Trương Hoài An",
+    "address": "128 Ngô Quyền, phường 10, Quận 10, TP HCM",
+    "phone": "0909456456",
+    "birthday": "09-12-1996",
+    "gender": "nam",
+    "id": 2
+  }
+]
