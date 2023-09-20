@@ -13,7 +13,7 @@ export function readFile(filePath) {
 
 export function writeFile(filePath, newData) {
   try {
-    console.log('newData', newData);
+    // console.log('newData', newData);
     const jsonData = JSON.stringify(newData);
     fs.writeFileSync(filePath, jsonData, 'utf8');
     console.log('Tệp JSON đã được ghi.');

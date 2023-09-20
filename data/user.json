@@ -1,18 +1,38 @@
 [
   {
-    "name": "Trương Hoàng Nam",
-    "address": "123 Ngô Quyền, phường 10, Quận 10, TP HCM",
-    "phone": "0909123456",
-    "birthday": "09-12-2006",
-    "gender": "nam",
-    "id": 1
+    "name": "Trương Mỹ Nhân",
+    "address": "102 Ngô Quyền, phường 4, Quận 10, TP HCM",
+    "phone": "0909123123",
+    "birthday": "20-10-2000",
+    "gender": "nữ",
+    "id": 1,
+    "username": "truongmynhan@gmail.com",
+    "password": "123",
+    "groupId": 3,
+    "role": "USER"
   },
   {
-    "name": "Trương Hoài An",
-    "address": "128 Ngô Quyền, phường 10, Quận 10, TP HCM",
-    "phone": "0909456456",
-    "birthday": "09-12-1996",
+    "name": "Trương Hoàng Sanh",
+    "address": "10 Ngô Quyền, phường 5, Quận 10, TP HCM",
+    "phone": "0909123333",
+    "birthday": "20-10-1975",
     "gender": "nam",
-    "id": 2
+    "id": 2,
+    "username": "truonghoangsanh@gmail.com",
+    "password": "123",
+    "groupId": 4,
+    "role": "ADMIN"
+  },
+  {
+    "name": "Nguyễn Văn Đinh",
+    "address": "102 Ngô Quyền, phường 7, Quận 10, TP HCM",
+    "phone": "0909123334",
+    "birthday": "20-10-2000",
+    "gender": "Nam",
+    "username": "a;djfk",
+    "password": "12345",
+    "id": 3,
+    "groupId": 2,
+    "role": "USER"
   }
 ]
