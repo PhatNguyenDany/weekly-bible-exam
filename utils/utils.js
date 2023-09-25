@@ -15,7 +15,7 @@ export function computeUserAge(birthday) {
 }
 
 export function getGroupByAge(groupData, age) {
-  if (groupData instanceof Array === true && age instanceof Number === true) {
+  if (groupData instanceof Array === true && age > 0) {
     const groupResult = groupData.find(groupItem => groupItem.fromAge <= age && age <= groupItem.toAge);
     if (!groupResult) {
       throw Error("Cannot found group for this user's age");

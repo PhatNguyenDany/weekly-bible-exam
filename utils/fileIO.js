@@ -6,8 +6,8 @@ export function readFile(filePath) {
     const jsonData = JSON.parse(data);
     // Dữ liệu JSON đã được đọc
     return jsonData;
-  } catch (err) {
-    console.error('Lỗi khi đọc tệp JSON:', err);
+  } catch (error) {
+    console.error('Lỗi khi đọc tệp JSON:', error);
   }
 }
 
@@ -18,8 +18,8 @@ export function writeFile(filePath, newData) {
     fs.writeFileSync(filePath, jsonData, 'utf8');
     console.log('Tệp JSON đã được ghi.');
     return true;
-  } catch (err) {
-    console.error('Lỗi khi ghi tệp JSON:', err);
+  } catch (error) {
+    console.error('Lỗi khi ghi tệp JSON:', error);
     return false;
   }
 }
