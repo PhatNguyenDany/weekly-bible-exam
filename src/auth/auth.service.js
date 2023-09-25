@@ -1,11 +1,6 @@
 import bcrypt from 'bcrypt';
-
 import jsonwebtoken from 'jsonwebtoken';
-import path from 'path';
-import { readFile } from './utills/fileIO.js';
 const { sign, verify } = jsonwebtoken;
-const __dirname = path.resolve();
-const fileUserPath = path.join(__dirname, './data/user.json');
 
 export function hashPassword(password) {
   const hashPassword = bcrypt.hashSync(password, 10);
@@ -13,7 +8,7 @@ export function hashPassword(password) {
 }
 
 export function comparePassword(passwordInput, passwordHashed) {
-  const isMatch = bcrypt.compareSync(hashPassword(passwordInput), passwordHashed);
+  const isMatch = bcrypt.compareSync(passwordInput, passwordHashed);
   return isMatch;
 }
 
@@ -45,27 +40,4 @@ export function decodeToken(token, secretSignature) {
     console.log(error);
     throw error;
   }
-}
-
-export async function isAuth(req, resp, next) {
-  const accessToken = req.header.authorization;
-  if (!accessToken) {
-    return resp.status(401).send({ msg: 'Invalid access token' });
-  }
-
-  const tokenVerified = await verifyToken(accessToken, process.env.ACCESS_TOKEN_SECRET);
-  if (!tokenVerified) {
-    return resp.status(401).send({ msg: 'Invalid access token' });
-  }
-
-  const userData = readFile(fileUserPath);
-
-  const user = userData.find(user => user.username === tokenVerified.payload.username);
-
-  if (!user) {
-    return resp.status(404).send({ msg: 'User not found' });
-  }
-  req.user = user;
-
-  next();
 }
