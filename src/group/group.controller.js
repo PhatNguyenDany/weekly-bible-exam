@@ -19,7 +19,7 @@ function getGroup(req, resp) {
 function getGroupByGroupName(req, resp) {
   if (req.user.role === 'ADMIN') {
     const groupData = getGroupData();
-    const groupByGroupName = groupData.find((group) => group.groupName.toLowerCase().includes(req.query.groupName.toLowerCase()));
+    const groupByGroupName = groupData.find((group) => (group.groupName.toLowerCase()).includes(req.query.groupName.toLowerCase()));
     // "The .toLowerCase() method is used to change a string to lowercase."
     if (!groupByGroupName) {
       resp.status(400).json({ msg: 'Cannot found group for groupName' });
