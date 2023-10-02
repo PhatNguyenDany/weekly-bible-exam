@@ -3,6 +3,7 @@ import { writeFile } from '../../utils/fileIO.js';
 import { computeUserAge, getGroupByAge } from '../../utils/utils.js';
 import { getGroupData } from '../group/group.service.js';
 import { getUserData, validatePropertiesUser } from './user.service.js';
+import { hashPassword } from '../auth/auth.service.js';
 ;
 
 const __dirname = path.resolve();
@@ -27,9 +28,10 @@ function updateUser(req, resp) {
   if (!userData || !groupData) {
     return resp.status(500).json({ msg: 'Something went wrong' });
   }
-  const indexUser = userData.findIndex((user) => user.id.toString() === req.user.id);
-  if (indexUser === -1) {
-    return resp.status(400).json({ msg: 'Can not found index user' });
+  const indexUser = userData.findIndex((user) => user.id.toString() === req.params.id);
+  let user = userData[indexUser];
+  if (!user) {
+    return resp.status(400).json({ msg: 'Can not found id user' });
   }
   // get data from the request body
   const userUpdate = req.body;
@@ -42,9 +44,12 @@ function updateUser(req, resp) {
   }
   // Check each properties in Object have value yet
   try {
-    validatePropertiesUser(userUpdate);
+    validatePropertiesUser(userUpdate, req.user.id);
   } catch (error) {
     return resp.status(400).json({ msg: error.message });
+  }
+  if (userUpdate.password) {
+    userUpdate.password = hashPassword(userUpdate.password);
   }
   // Check birthday input
   const age = computeUserAge(userUpdate.birthday);
@@ -54,10 +59,11 @@ function updateUser(req, resp) {
   userUpdate.id = Number(req.params.id);
   userUpdate.role = 'USER';
   // set new user's groupId equal group id that found above
-  userData[indexUser] = userUpdate;
   userUpdate.groupId = groupResult.groupId;
+  user = { ...user, ...userUpdate };
+  userData[indexUser] = user;
   writeFile(fileUserPath, userData);
-  resp.status(200).json({ data: userUpdate, msg: 'Update user successful' });
+  return resp.status(200).json({ data: user, msg: 'Update user successful' });
 };
 
 // update user by user's id
@@ -70,7 +76,8 @@ function updateUserById(req, resp) {
       resp.status(500).json({ msg: 'Something went wrong' });
     }
     const indexUser = userData.findIndex((user) => user.id.toString() === req.params.id);
-    if (indexUser === -1) {
+    let user = userData[indexUser];
+    if (!user) {
       return resp.status(400).json({ msg: 'Can not found id user' });
     }
     // get data from the request body
@@ -78,36 +85,34 @@ function updateUserById(req, resp) {
     if (userUpdate instanceof Object === true) {
       if (!userUpdate) {
         return resp.status(400).json({ msg: 'Wrong input properties user' });
-      } else {
-        return resp.status(400).json({ msg: 'Wrong input user update' });
       }
-    }
-    // Check each properties in Object have value yet
-    let isPropertiesUser;
-    try {
-      isPropertiesUser = validatePropertiesUser(userUpdate);
-    } catch (error) {
-      return resp.status(400).json({ msg: error.message });
-    }
-    if (isPropertiesUser === false) {
-      return resp.status(400).json({ msg: 'Unable to update a user, duplicate userphone exist' });
-    }
-    // check birthday input and find user's age
-    const age = computeUserAge(userUpdate.birthday);
-    // Find a group that has newUser's age between fromAge and toAge of this group
-    const groupResult = getGroupByAge(groupData, age);
-    // user id and role
-    userUpdate.id = Number(req.params.id);
-    userUpdate.role = 'USER';
-    // set new user's groupId equal group id that found above
-    userData[indexUser] = userUpdate;
-    userUpdate.groupId = groupResult.groupId;
-    writeFile(fileUserPath, userData);
-    return resp.status(200).json({ data: userUpdate, msg: 'Update user successful' });
-  } else {
-    return resp.status(200).json({ msg: 'You don\'t have permission' });
-  };
-};
+      // Check each properties in Object have value yet
+      try {
+        validatePropertiesUser(userUpdate, req.params.id);
+      } catch (error) {
+        return resp.status(400).json({ msg: error.message });
+      }
+      if (userUpdate.password) {
+        userUpdate.password = hashPassword(userUpdate.password);
+      }
+      // check birthday input and find user's age
+      const age = computeUserAge(userUpdate.birthday);
+      // Find a group that has newUser's age between fromAge and toAge of this group
+      const groupResult = getGroupByAge(groupData, age);
+      // user id and role
+      userUpdate.id = Number(req.params.id);
+      userUpdate.role = 'USER';
+      // set new user's groupId equal group id that found above
+      userUpdate.groupId = groupResult.groupId;
+      user = { ...user, ...userUpdate };
+      userData[indexUser] = user;
+      writeFile(fileUserPath, userData);
+      return resp.status(200).json({ data: user, msg: 'Update user successful' });
+    } else {
+      return resp.status(200).json({ msg: 'You don\'t have permission' });
+    };
+  }
+}
 
 // Delete a user
 function deleteUserProfile(req, resp) {

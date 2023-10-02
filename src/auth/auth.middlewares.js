@@ -6,7 +6,6 @@ const __dirname = path.resolve();
 const fileUserPath = path.join(__dirname, './data/user.json');
 export async function isAuth(req, resp, next) {
   const accessToken = req.headers.authorization;
-  console.log('accessToken', accessToken);
   if (!accessToken) {
     return resp.status(401).send({ msg: 'Invalid access token' });
   }
@@ -14,7 +13,6 @@ export async function isAuth(req, resp, next) {
   if (!tokenVerified) {
     return resp.status(401).send({ msg: 'Invalid access token' });
   }
-  console.log('verifiedToken', tokenVerified);
   const userData = readFile(fileUserPath);
   const user = userData.find(user => user.username === tokenVerified.username);
   if (!user) {

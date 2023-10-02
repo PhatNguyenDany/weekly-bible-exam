@@ -80,19 +80,16 @@ async function login(req, resp) {
   const password = req.body.password;
   /// tìm user có username trong userData
   const userData = getUserData();
-  console.log('userdata', userData);
   // Check data is available
   if (!userData) {
     return resp.status(500).json({ msg: 'Something went wrong' });
   }
-  console.log('username', username);
   const user = userData.find((user) => user.username === username);
   if (!user) {
     return resp.status(400).json({ msg: 'Can not found username' });
   }
   // nếu có thì lấy password ra so sánh với password truyền vào
   // không có thì báo lỗi username or password không đúng
-  console.log('password', password);
   const isMatch = comparePassword(password, user.password);
   if (isMatch === false) {
     return resp.status(400).json({ msg: 'user or password are incorrect' });
@@ -106,7 +103,6 @@ async function login(req, resp) {
   const secretSignature = process.env.ACCESS_TOKEN_SECRET;
   // tạo access token từ payload
   const accessToken = await generateToken(payload, secretSignature, '1h');
-  console.log('accessToken', accessToken);
   return resp.status(200).json({ accessToken });
   /// trả access token về cho user
 }

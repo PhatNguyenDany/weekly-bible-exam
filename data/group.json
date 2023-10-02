@@ -18,13 +18,13 @@
     "groupId": 3
   },
   {
-    "groupName": "Thanh Tráng",
+    "groupName": "Tráng Niên",
     "fromAge": 46,
     "toAge": 60,
     "groupId": 4
   },
   {
-    "groupName": "Thanh tráng",
+    "groupName": "Trung Niên",
     "fromAge": 61,
     "toAge": 70,
     "groupId": 5

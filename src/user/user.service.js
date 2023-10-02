@@ -49,15 +49,21 @@ export function validateUserGender(newUser) {
   throw Error('can not validated user gender');
 }
 
-export function validatePropertiesUser(newUser) {
+export function validatePropertiesUser(newUser, id) {
   if (newUser instanceof Object === true) {
     if (newUser.name.length < 6) {
       throw Error('Wrong input new user name');
     }
-    if (newUser.password.length < 8) {
-      throw Error('Wrong input password');
+    if (!id) {
+      if (newUser.password.length < 8) {
+        throw Error('Wrong input password');
+      }
+    } else {
+      if (newUser.password && newUser.password.length < 8) {
+        throw Error('Wrong input password');
+      }
     }
-    if (!newUser.name || !newUser.birthday || !newUser.gender || !newUser.address || !newUser.phone || !newUser.username || !newUser.password) {
+    if (!newUser.name || !newUser.birthday || !newUser.gender || !newUser.address || !newUser.phone || !newUser.username) {
       throw Error('Please fill in all required information');
     }
     return;
