@@ -38,5 +38,3 @@ export function validatePropertiesGroup(newGroup) {
     }
   } throw Error('Can not validated user properties');
 };
-
-// export default { validateDuplicateGroup, validatePropertiesGroup, getGroupData };

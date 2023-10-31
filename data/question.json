@@ -1,6 +1,6 @@
 [
   {
-    "weekQuizId": 41,
+    "weekNo": 41,
     "quizId": 401,
     "quizNo": 1,
     "quizType": "multipleYesNo",
@@ -57,7 +57,7 @@
     }
   },
   {
-    "weekQuizId": 41,
+    "weekNo": 41,
     "quizId": 402,
     "quizNo": 2,
     "quizType": "singleYesNo",
@@ -81,7 +81,7 @@
     }
   },
   {
-    "weekQuizId": 41,
+    "weekNo": 41,
     "quizId": 403,
     "quizNo": 3,
     "quizType": "singleSelect",
@@ -123,7 +123,7 @@
     }
   },
   {
-    "weekQuizId": 41,
+    "weekNo": 41,
     "quizId": 404,
     "quizNo": 4,
     "quizType": "multipleSelect",
@@ -165,14 +165,23 @@
     }
   },
   {
-    "weekQuizId": 41,
+    "weekNo": 41,
     "quizId": 405,
     "quizNo": 5,
     "quizType": "image",
     "imageUrl": "localhost:3000/images/hinh1.png",
     "mainQuestion": "Câu kinh thánh cho hình ảnh trên:",
-    "subQuestion": {},
-    "answer": {},
+    "subQuestion": {
+      "a": {
+        "text": "Ăn thịt nó trong nơi thánh"
+      }
+    },
+    "answer": {
+      "1": {
+        "isAnswer": true,
+        "text": "Sa-ra"
+      }
+    },
     "bibleVerse": {
       "1": {
         "book": "sáng thế ký",
@@ -182,7 +191,7 @@
     }
   },
   {
-    "weekQuizId": 41,
+    "weekNo": 41,
     "quizId": 406,
     "quizNo": 6,
     "quizType": "blank",
@@ -217,7 +226,7 @@
     }
   },
   {
-    "weekQuizId": 41,
+    "weekNo": 41,
     "quizId": 407,
     "quizNo": 7,
     "quizType": "crossword",

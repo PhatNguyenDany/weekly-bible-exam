@@ -28,12 +28,10 @@ export function getGroupByAge(groupData, age) {
 }
 
 export function getNextId(data) {
-  if (data instanceof Array === true) {
-    const lastUser = data[data.length - 1];
-    const nextId = lastUser.id + 1;
-    return nextId;
-  } else {
-    console.error('data function getNextID is not Array');
+  if (data instanceof Array === false) {
     throw Error('Can not get next id ');
   }
+  const lastUser = data[data.length - 1];
+  const nextId = lastUser.id + 1;
+  return nextId;
 }

@@ -6,7 +6,7 @@ const questionRouters = express.Router();
 questionRouters.get('/', isAuth, questionController.getQuestion);
 // questionRouters.get('/quizId', isAuth, questionController.getQuestionByQuizId);
 // questionRouters.get('/weekQuizIds', isAuth, questionController.getQuestionByWeekQuizIds);
-// questionRouters.post('/', isAuth, questionController.createQuestion);
+questionRouters.post('/', isAuth, questionController.createQuestion);
 // questionRouters.put('/quizId', isAuth, questionController.updateQuestionByQuizId);
 // questionRouters.delete('/quizId', isAuth, questionController.deleteQuestionByQuizId);
 
