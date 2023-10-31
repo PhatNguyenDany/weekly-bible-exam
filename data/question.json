@@ -1,0 +1,301 @@
+[
+  {
+    "weekNo": 41,
+    "quizId": 401,
+    "quizNo": 1,
+    "quizType": "multipleYesNo",
+    "mainQuestion": "Bột lọc có trong của lễ nào ?",
+    "subQuestion": {
+      "1": {
+        "text": "Của lễ thiêu"
+      },
+      "2": {
+        "text": "Của lễ chay"
+      },
+      "3": {
+        "text": "Của lễ thù ân"
+      },
+      "4": {
+        "text": "Của lễ chuộc tội"
+      }
+    },
+    "answer": {
+      "1": {
+        "isAnswer": true
+      },
+      "2": {
+        "isAnswer": false
+      },
+      "3": {
+        "isAnswer": true
+      },
+      "4": {
+        "isAnswer": true
+      }
+    },
+    "bibleVerse": {
+      "1": {
+        "book": "sáng thế ký",
+        "chapter": 2,
+        "ver": 1
+      },
+      "2": {
+        "book": "sáng thế ký",
+        "chapter": 4,
+        "ver": 3
+      },
+      "3": {
+        "book": "sáng thế ký",
+        "chapter": 5,
+        "ver": 2
+      },
+      "4": {
+        "book": "sáng thế ký",
+        "chapter": 12,
+        "ver": 5
+      }
+    }
+  },
+  {
+    "weekNo": 41,
+    "quizId": 402,
+    "quizNo": 2,
+    "quizType": "singleYesNo",
+    "mainQuestion": "Một người vô ý đụng đến một vật ô uế thì không được kể là mắc tội ?",
+    "subQuestion": {
+      "1": {
+        "text": ""
+      }
+    },
+    "answer": {
+      "1": {
+        "isAnswer": true
+      }
+    },
+    "bibleVerse": {
+      "1": {
+        "book": "sáng thế ký",
+        "chapter": 2,
+        "ver": 1
+      }
+    }
+  },
+  {
+    "weekNo": 41,
+    "quizId": 403,
+    "quizNo": 3,
+    "quizType": "singleSelect",
+    "mainQuestion": "Đối với sinh tế chuộc tội có huyết đem vào hội mạc để làm lễ chuộc tội nơi đền thánh, thầy tế lễ nên: ",
+    "subQuestion": {
+      "a": {
+        "text": "Ăn thịt nó trong nơi thánh"
+      },
+      "b": {
+        "text": "Hãy đốt nó đi"
+      },
+      "c": {
+        "text": "Chẳng nên ăn thịt nó"
+      },
+      "d": {
+        "text": "Câu b và c đúng"
+      }
+    },
+    "answer": {
+      "a": {
+        "isAnswer": true
+      },
+      "b": {
+        "isAnswer": false
+      },
+      "c": {
+        "isAnswer": false
+      },
+      "d": {
+        "isAnswer": false
+      }
+    },
+    "bibleVerse": {
+      "a": {
+        "book": "sáng thế ký",
+        "chapter": 6,
+        "ver": 7
+      }
+    }
+  },
+  {
+    "weekNo": 41,
+    "quizId": 404,
+    "quizNo": 4,
+    "quizType": "multipleSelect",
+    "mainQuestion": "Men và Mật được dùng trong của lễ nào:",
+    "subQuestion": {
+      "a": {
+        "text": "Ăn thịt nó trong nơi thánh"
+      },
+      "b": {
+        "text": "Hãy đốt nó đi"
+      },
+      "c": {
+        "text": "Chẳng nên ăn thịt nó"
+      },
+      "d": {
+        "text": "Câu b và c đúng"
+      }
+    },
+    "answer": {
+      "a": {
+        "isAnswer": true
+      },
+      "b": {
+        "isAnswer": false
+      },
+      "c": {
+        "isAnswer": true
+      },
+      "d": {
+        "isAnswer": false
+      }
+    },
+    "bibleVerse": {
+      "a": {
+        "book": "sáng thế ký",
+        "chapter": 6,
+        "ver": 7
+      }
+    }
+  },
+  {
+    "weekNo": 41,
+    "quizId": 405,
+    "quizNo": 5,
+    "quizType": "image",
+    "imageUrl": "localhost:3000/images/hinh1.png",
+    "mainQuestion": "Câu kinh thánh cho hình ảnh trên:",
+    "subQuestion": {
+      "a": {
+        "text": "Ăn thịt nó trong nơi thánh"
+      }
+    },
+    "answer": {
+      "1": {
+        "isAnswer": true,
+        "text": "Sa-ra"
+      }
+    },
+    "bibleVerse": {
+      "1": {
+        "book": "sáng thế ký",
+        "chapter": 15,
+        "ver": 7
+      }
+    }
+  },
+  {
+    "weekNo": 41,
+    "quizId": 406,
+    "quizNo": 6,
+    "quizType": "blank",
+    "mainQuestion": "Điền vào chỗ trống:",
+    "subQuestion": {
+      "1": {
+        "text": " Áp-ra-ham đã đặt tên đứa con trai mà"
+      },
+      "2": {
+        "text": "đã sanh cho mình là"
+      },
+      "3": {
+        "text": "."
+      }
+    },
+    "answer": {
+      "1": {
+        "isAnswer": true,
+        "text": "Sa-ra"
+      },
+      "2": {
+        "isAnswer": true,
+        "text": "Y-sác"
+      }
+    },
+    "bibleVerse": {
+      "1": {
+        "book": "sáng thế ký",
+        "chapter": 15,
+        "ver": 7
+      }
+    }
+  },
+  {
+    "weekNo": 41,
+    "quizId": 407,
+    "quizNo": 7,
+    "quizType": "crossword",
+    "mainQuestion": "Điền vào ô trống để hoàn thành các câu hỏi:",
+    "quiz": [
+      [
+        null,
+        null,
+        2,
+        null
+      ],
+      [
+        null,
+        null,
+        "V",
+        null
+      ],
+      [
+        1,
+        "T",
+        "Ộ",
+        ""
+      ],
+      [
+        null,
+        null,
+        "",
+        null
+      ]
+    ],
+    "subQuestion": {
+      "1": {
+        "text": "Nói dối thì được gọi là gì?",
+        "direction": "horizontal",
+        "startingPoint": {
+          "x": 0,
+          "y": 2
+        }
+      },
+      "2": {
+        "text": "Trạng thái của người đang gấp là gì?",
+        "direction": "vertical",
+        "startingPoint": {
+          "x": 2,
+          "y": 0
+        }
+      }
+    },
+    "answer": {
+      "1": {
+        "isAnswer": true,
+        "text": "Tội"
+      },
+      "2": {
+        "isAnswer": true,
+        "text": "Vội"
+      }
+    },
+    "bibleVerse": {
+      "1": {
+        "book": "sáng thế ký",
+        "chapter": 5,
+        "ver": 7
+      },
+      "2": {
+        "book": "sáng thế ký",
+        "chapter": 7,
+        "ver": 5
+      }
+    }
+  }
+]

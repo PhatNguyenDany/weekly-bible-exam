@@ -12,3 +12,12 @@ export function checkDate(birthday) {
     return false;
   }
 }
+
+export function changeTime(time) {
+  const isDate = checkDate(time);
+  if (isDate === false) {
+    throw Error('Wrong birthday input');
+  }
+  const timeChange = moment(time, 'YYYY-MM-DD').getTime();
+  return timeChange;
+}

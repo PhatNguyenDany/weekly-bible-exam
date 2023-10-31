@@ -4,7 +4,6 @@ import { computeUserAge, getGroupByAge } from '../../utils/utils.js';
 import { getGroupData } from '../group/group.service.js';
 import { getUserData, validatePropertiesUser } from './user.service.js';
 import { hashPassword } from '../auth/auth.service.js';
-;
 
 const __dirname = path.resolve();
 const fileUserPath = path.join(__dirname, './data/user.json');
@@ -109,7 +108,7 @@ function updateUserById(req, resp) {
       writeFile(fileUserPath, userData);
       return resp.status(200).json({ data: user, msg: 'Update user successful' });
     } else {
-      return resp.status(200).json({ msg: 'You don\'t have permission' });
+      return resp.status(400).json({ msg: 'You don\'t have permission' });
     };
   }
 }

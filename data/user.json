@@ -1,1 +1,38 @@
-[{"name":"Nguyễn Tấn Phát","address":"10 Ngô Quyền, phường 5, Quận 10, TP HCM","phone":"0909123333","birthday":"20-10-1975","gender":"nam","id":1,"username":"Nguyentanphat@gmail.com","password":"$2b$10$1XYOJVWTK/lACSvlREZU9O7uLgQhnDmMaJEwDP9X3bILg0HkKZnNG","groupId":4,"role":"ADMIN"},{"name":"Trương Mỹ Nhân","address":"102 Ngô Quyền, phường 6, Quận 10, TP HCM","phone":"0909123123","birthday":"20-10-1983","gender":"nữ","username":"truongmynhan@gmail.com","password":"$2b$10$1XYOJVWTK/lACSvlREZU9O7uLgQhnDmMaJEwDP9X3bILg0HkKZnNG","id":2,"role":"USER","groupId":3},{"name":"Nguyễn Văn A","address":"102 Ngô Quyền, phường 4, Quận 10, TP HCM","phone":"0909133123","birthday":"20-10-2000","gender":"nam","username":"nguyenvana@gmail.com","password":"$2b$10$1XYOJVWTK/lACSvlREZU9O7uLgQhnDmMaJEwDP9X3bILg0HkKZnNG","groupId":2,"id":3,"role":"USER"}]
+[
+  {
+    "name": "Nguyễn Tấn Phát",
+    "address": "10 Ngô Quyền, phường 5, Quận 10, TP HCM",
+    "phone": "0909123333",
+    "birthday": "20-10-1975",
+    "gender": "nam",
+    "id": 1,
+    "username": "Nguyentanphat@gmail.com",
+    "password": "$2b$10$1XYOJVWTK/lACSvlREZU9O7uLgQhnDmMaJEwDP9X3bILg0HkKZnNG",
+    "groupId": 4,
+    "role": "ADMIN"
+  },
+  {
+    "name": "Trương Mỹ Nhân",
+    "address": "102 Ngô Quyền, phường 6, Quận 10, TP HCM",
+    "phone": "0909123123",
+    "birthday": "20-10-1983",
+    "gender": "nữ",
+    "username": "truongmynhan@gmail.com",
+    "password": "$2b$10$1XYOJVWTK/lACSvlREZU9O7uLgQhnDmMaJEwDP9X3bILg0HkKZnNG",
+    "id": 2,
+    "role": "USER",
+    "groupId": 3
+  },
+  {
+    "name": "Nguyễn Văn A",
+    "address": "102 Ngô Quyền, phường 4, Quận 10, TP HCM",
+    "phone": "0909133123",
+    "birthday": "20-10-2000",
+    "gender": "nam",
+    "username": "nguyenvana@gmail.com",
+    "password": "$2b$10$1XYOJVWTK/lACSvlREZU9O7uLgQhnDmMaJEwDP9X3bILg0HkKZnNG",
+    "groupId": 2,
+    "id": 3,
+    "role": "USER"
+  }
+]
